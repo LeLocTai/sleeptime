@@ -167,17 +167,10 @@
 
                 var dialDown = DrumIcon.down(settings);
                 $(wrapper).append(dialDown);
-
-                $(wrapper).hover(function() {
-                    $(this).find(".up").show();
-                    $(this).find(".down").show();
-                }, function() {
-                    $(this).find(".up").hide();
-                    $(this).find(".down").hide();
-                });
             }
 
-            settings.radius = Math.round(($(drum).height() / 2) / Math.tan(Math.PI / settings.panelCount));
+            // settings.radius = Math.round(($(drum).height() / 2) / Math.tan(Math.PI / settings.panelCount));
+            settings.radius = Math.round(settings.panelCount * $(drum).height() / Math.PI / 2);
             settings.mapping = [];
             var c = 0;
             for (var i = 0; i < settings.panelCount; i++) {
@@ -235,8 +228,15 @@
                     settings.mapping[i].update(list[i]);
                 }
             };
-            var transform = function(fire_event) {
-                $(drum).css(settings.transformProp, 'translateZ(-' + settings.radius + 'px) ' + settings.rotateFn + '(' + settings.rotation + 'deg)');
+            var transform = function(fire_event, animate) {
+                settings.radius = Math.round(settings.panelCount * $(drum).height() / Math.PI / 2);
+                var css = {};
+                css[settings.transformProp] =
+                    'translateZ(-' + settings.radius + 'px) ' +
+                    settings.rotateFn + '(' + settings.rotation + 'deg)';
+
+                css['transition-duration'] = animate ? '250ms' : '0ms';
+                $(drum).css(css);
 
                 var selected = getSelected();
                 if (selected) {
@@ -263,7 +263,7 @@
                 var selected = new PanelModel(index, dataindex, settings);
                 update(selected);
                 settings.rotation = index * settings.theta;
-                transform(false);
+                transform(false, true);
             };
 
 
@@ -289,22 +289,22 @@
                     no_mouseevents: true
                 });
 
-                settings.touch.on("dragstart", function(e) {
+                settings.touch.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
+
+
+                settings.touch.on("panstart", function(e) {
                     settings.distance = 0;
                 });
 
-                settings.touch.on("drag", function(e) {
-                    var evt = ["up", "down"];
-                    if (evt.indexOf(e.gesture.direction) >= 0) {
-                        settings.rotation += Math.round(e.gesture.deltaY - settings.distance) * -1;
-                        transform(true);
-                        settings.distance = e.gesture.deltaY;
-                    }
+                settings.touch.on("panmove", function(e) {
+                    settings.rotation += Math.round(e.deltaY - settings.distance) * -1;
+                    transform(true, false);
+                    settings.distance = e.deltaY;
                 });
 
-                settings.touch.on("dragend", function(e) {
+                settings.touch.on("panend", function(e) {
                     settings.rotation = getNearest();
-                    transform(true);
+                    transform(true, true);
                 });
             }
 
@@ -312,12 +312,13 @@
                 $(dialUp).click(function(e) {
                     var deg = settings.rotation + settings.theta + 1;
                     settings.rotation = getNearest(deg);
-                    transform(true);
+
+                    transform(true, true);
                 });
                 $(dialDown).click(function(e) {
                     var deg = settings.rotation - settings.theta - 1;
                     settings.rotation = getNearest(deg);
-                    transform(true);
+                    transform(true, true);
                 });
             }
         }

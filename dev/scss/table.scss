@@ -1,0 +1,13 @@
+@import 'variables';
+table {
+    border: none;
+    margin: 1em auto;
+    th,
+    td {
+        border: none;
+        padding: 1em;
+    }
+    td:nth-child(2) {
+        text-align: right;
+    }
+}

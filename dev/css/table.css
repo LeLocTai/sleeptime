@@ -1,0 +1,9 @@
+table {
+  border: none;
+  margin: 1em auto; }
+  table th,
+  table td {
+    border: none;
+    padding: 1em; }
+  table td:nth-child(2) {
+    text-align: right; }
