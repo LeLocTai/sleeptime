@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var uncss = require('gulp-uncss');
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync');
 var useref = require('gulp-useref');
@@ -51,9 +50,6 @@ gulp.task('useref', function() {
         .pipe(useref())
         .pipe(gulpIf('*.js', uglify()))
         .pipe(gulpIf('*.css', autoprefixer()))
-        .pipe(gulpIf('*.css', uncss({
-            html: ['dev/**/*.html']
-        })))
         .pipe(gulpIf('*.css', csso()))
         .pipe(gulp.dest(publicFolder));
 });

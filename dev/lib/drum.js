@@ -5,8 +5,6 @@
  * Licensed under the MIT license */
 
 (function($) {
-    "use strict";
-
     var DrumIcon = (function() {
         var svgelem = function(tagName) {
             return document.createElementNS("http://www.w3.org/2000/svg", tagName);
