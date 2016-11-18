@@ -67,7 +67,7 @@ gulp.task('images', function() {
 
 // Copying other files 
 gulp.task('copy', function() {
-    return gulp.src('dev/**/*.+(xml|json)')
+    return gulp.src('dev/**/*.+(xml|json|js)')
         .pipe(gulp.dest(publicFolder));
 });
 gulp.task('copy:cname', function() {
