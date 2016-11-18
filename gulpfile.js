@@ -67,11 +67,11 @@ gulp.task('images', function() {
 
 // Copying other files 
 gulp.task('copy', function() {
-    return gulp.src('dev/**/*.+(xml|json|js)')
+    return gulp.src('dev/**/*.+(xml|json)')
         .pipe(gulp.dest(publicFolder));
 });
 gulp.task('copy:cname', function() {
-    return gulp.src('dev/CNAME')
+    return gulp.src('dev/+(CNAME|sw.js)')
         .pipe(gulp.dest(publicFolder));
 });
 // Cleaning
