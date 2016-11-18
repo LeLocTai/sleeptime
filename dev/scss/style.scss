@@ -1,17 +1,23 @@
 @import 'variables';
 body {
-    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+    font-size: 28px;
     color: $accent;
     background-color: $background;
 }
 
 #ws {
+    width: 100%;
+    max-width: 12em;
     display: block;
     outline: none;
+    font-family: inherit;
     font-size: inherit;
-    margin: 1em auto;
+    margin: auto;
+    margin-bottom: 1em;
     padding-left: 8px;
-    height: $elementHeight;
+    height: 2em;
     border-radius: 4px;
     border-color: $accent;
     background-color: $background;
@@ -23,23 +29,25 @@ body {
     justify-content: center;
     text-align: center;
     align-items: stretch;
-    height: $elementHeight*3.6;
+    height: 6.5em;
     width: 100%;
 }
 
 span.middle {
     display: inline-block;
-    line-height: calc(#{$elementHeight*3.6} - 0.2em);
+    line-height: 6.4em;
+    margin: 0 0.25em;
 }
 
 form.ampm {
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 0.25em;
+    margin-left: 0.5em;
+    font-size: $clockFontSize;
     >label {
         opacity: 0.35;
-        margin: 0.25em auto;
     }
     input {
         display: none;

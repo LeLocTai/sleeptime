@@ -1,13 +1,39 @@
 @import 'variables';
 table {
     border: none;
-    margin: 1em auto;
+    margin: .5em auto;
     th,
     td {
         border: none;
-        padding: 1em;
+        padding-top: 1em;
     }
-    td:nth-child(2) {
-        text-align: right;
+    th {
+        &:nth-child(1) {
+            padding-right: 1em;
+        }
+        &:nth-child(2) {
+            padding-left: 1em;
+        }
+    }
+    td {
+        &:nth-child(1) {
+            padding-left: .5em;
+        }
+        &:nth-child(2) {
+            text-align: right;
+            padding-right: .5em;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    table {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 320px) {
+    table {
+        font-size: 23px;
     }
 }

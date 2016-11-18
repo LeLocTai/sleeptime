@@ -17,8 +17,8 @@ var publicFolder = 'docs';
 gulp.task('browserSync', function() {
     browserSync({
         server: {
-            baseDir: 'dev'
-                // https: true
+            baseDir: 'dev',
+            https: true
         }
     });
 });
@@ -38,6 +38,7 @@ gulp.task('watch', function() {
     gulp.watch('dev/scss/**/*.scss', ['sass']);
     gulp.watch('dev/*.html', reload);
     gulp.watch('dev/js/**/*.js', reload);
+    gulp.watch('dev/lib/**/*.js', reload);
     gulp.watch('dev/**/*.+(png|jpg|jpeg|gif|svg|ttf)', reload);
 });
 

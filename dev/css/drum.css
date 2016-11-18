@@ -1,4 +1,5 @@
 div.drum-wrapper {
+  font-family: 'Roboto', sans-serif;
   display: inline-block;
   position: relative;
   user-select: none;
@@ -14,14 +15,15 @@ div.drum-wrapper {
     transform: translateY(-50%);
     left: 0px; }
   div.drum-wrapper .dial {
+    touch-action: none;
+    user-select: none;
     position: absolute;
     width: 100%;
     left: 0px;
-    height: 2.6em;
-    background-color: rgba(46, 8, 5, 0.5); }
+    height: 2.4em;
+    background: linear-gradient(rgba(46, 8, 5, 0.85), rgba(46, 8, 5, 0)); }
     div.drum-wrapper .dial div {
-      height: 2em;
-      margin: 0 auto; }
+      display: none; }
     div.drum-wrapper .dial svg {
       position: absolute;
       left: 50%;
@@ -31,13 +33,15 @@ div.drum-wrapper {
     div.drum-wrapper .up svg {
       top: 2px; }
   div.drum-wrapper .down {
-    bottom: 0px; }
+    bottom: 0px;
+    background: linear-gradient(rgba(46, 8, 5, 0), rgba(46, 8, 5, 0.85)); }
     div.drum-wrapper .down svg {
       bottom: 2px; }
   div.drum-wrapper div.container,
   div.drum-wrapper figure {
-    height: 2em;
-    line-height: 2em; }
+    font-size: 48px;
+    height: 1em;
+    line-height: 1em; }
 
 /* actual drum styles */
 div.drum {
@@ -57,5 +61,4 @@ div.drum {
     padding: 0px 3px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden;
     width: 100%; }

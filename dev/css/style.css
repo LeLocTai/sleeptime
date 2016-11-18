@@ -1,13 +1,19 @@
 body {
-  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  user-select: none;
+  font-size: 28px;
   color: rgba(255, 245, 200, 0.87);
   background-color: #2e0805; }
 
 #ws {
+  width: 100%;
+  max-width: 12em;
   display: block;
   outline: none;
+  font-family: inherit;
   font-size: inherit;
-  margin: 1em auto;
+  margin: auto;
+  margin-bottom: 1em;
   padding-left: 8px;
   height: 2em;
   border-radius: 4px;
@@ -20,21 +26,23 @@ body {
   justify-content: center;
   text-align: center;
   align-items: stretch;
-  height: 7.2em;
+  height: 6.5em;
   width: 100%; }
 
 span.middle {
   display: inline-block;
-  line-height: calc(7.2em - 0.2em); }
+  line-height: 6.4em;
+  margin: 0 0.25em; }
 
 form.ampm {
+  font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 0.25em; }
+  margin-left: 0.5em;
+  font-size: 48px; }
   form.ampm > label {
-    opacity: 0.35;
-    margin: 0.25em auto; }
+    opacity: 0.35; }
   form.ampm input {
     display: none; }
     form.ampm input:checked + label {
