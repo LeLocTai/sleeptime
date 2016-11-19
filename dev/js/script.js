@@ -3,6 +3,8 @@ var hourSelect;
 var minuteSelect;
 var ws;
 var result;
+var timeFormat = 'HH:mm';
+var config = {};
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js').then(function(registration) {
@@ -20,6 +22,25 @@ window.onload = function() {
     result = $('#result');
     ws = $('#ws');
 
+    config = Cookies.getJSON('config');
+    if (config == undefined) {
+        config = {
+            ws: 'I need to wake up at',
+            hour: '06',
+            minute: '00',
+            ampm: 'AM'
+        }
+    }
+    ws.val(config.ws);
+    hourSelect.val(config.hour);
+    minuteSelect.val(config.minute);
+    if (config.ampm == 'AM') {
+        $('form.ampm>input:nth-child(1)').prop('checked', true);
+    } else {
+        $('form.ampm>input:nth-child(3)').prop('checked', true);
+    }
+
+
     $('.time-picker>select').drum({
         panelCount: 12,
         dail_w: 32,
@@ -31,11 +52,19 @@ window.onload = function() {
 
     $('input[name=ap]', 'form.ampm').change(changeTargetTime);
     ws.change(changeTargetTime);
+
     changeTargetTime();
 };
 
 function changeTargetTime() {
-    targetTime = moment(hourSelect.val() + minuteSelect.val() + $('input[name=ap]:checked', 'form.ampm').val(), 'hhmma');
+    config = {
+        ws: ws.val(),
+        hour: hourSelect.val(),
+        minute: minuteSelect.val(),
+        ampm: $('input[name=ap]:checked', 'form.ampm').val()
+    };
+    Cookies.set('config', config, { expires: 365 });
+    targetTime = moment(config.hour + config.minute + config.ampm, 'hhmma');
 
     result.empty();
 
@@ -50,11 +79,11 @@ function changeTargetTime() {
 
         tr1.append(th1, th2);
 
-        six = $("<td>").html(targetTime.subtract(6, 'hours').format('HH:mm'));
+        six = $("<td>").html(targetTime.subtract(6, 'hours').format(timeFormat));
         tr4.append(six, $("<td>").html('6 hours'));
-        seven = $("<td>").html(targetTime.subtract(1.5, 'hours').format('HH:mm'));
+        seven = $("<td>").html(targetTime.subtract(1.5, 'hours').format(timeFormat));
         tr3.append(seven, $("<td>").html('7.5 hours'));
-        nine = $("<td>").html(targetTime.subtract(1.5, 'hours').format('HH:mm'));
+        nine = $("<td>").html(targetTime.subtract(1.5, 'hours').format(timeFormat));
         tr2.append(nine, $("<td>").html('9 hours'));
         result.append(tr1, tr2, tr3, tr4);
     } else {
@@ -63,11 +92,11 @@ function changeTargetTime() {
 
         tr1.append(th1, th2);
 
-        six = $("<td>").html(targetTime.add(6, 'hours').format('HH:mm'));
+        six = $("<td>").html(targetTime.add(6, 'hours').format(timeFormat));
         tr2.append(six, $("<td>").html('6 hours'));
-        seven = $("<td>").html(targetTime.add(1.5, 'hours').format('HH:mm'));
+        seven = $("<td>").html(targetTime.add(1.5, 'hours').format(timeFormat));
         tr3.append(seven, $("<td>").html('7.5 hours'));
-        nine = $("<td>").html(targetTime.add(1.5, 'hours').format('HH:mm'));
+        nine = $("<td>").html(targetTime.add(1.5, 'hours').format(timeFormat));
         tr4.append(nine, $("<td>").html('9 hours'));
         result.append(tr1, tr4, tr3, tr2);
     }
