@@ -25,7 +25,7 @@ div.drum-wrapper {
         width: 100%;
         left: 0px;
         height: 2.4em;
-        background: linear-gradient(transparentize($background, .15), transparentize($background, 1));
+        background: linear-gradient(transparentize($background, .1), transparentize($background, 1));
         div {
             display: none;
         }
@@ -46,7 +46,7 @@ div.drum-wrapper {
         svg {
             bottom: 2px;
         }
-        background: linear-gradient(transparentize($background, 1), transparentize($background, .15));
+        background: linear-gradient(transparentize($background, 1), transparentize($background, .1));
     }
     div.container,
     figure {
@@ -73,10 +73,6 @@ div.drum {
         left: 0px;
         top: 0px;
         margin: 0px;
-        padding: 0px 3px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        // overflow: hidden;
         width: 100%;
     }
 }
