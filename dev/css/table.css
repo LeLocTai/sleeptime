@@ -1,14 +1,15 @@
 table {
   border: none;
-  margin: .5em auto; }
+  margin: 1.2em auto; }
   table th,
   table td {
     border: none;
-    padding-top: 1em; }
-  table th:nth-child(1) {
-    padding-right: 1em; }
-  table th:nth-child(2) {
-    padding-left: 1em; }
+    padding-bottom: 1.2em;
+    width: 5.5em;
+    text-align: left; }
+    table th:nth-child(2),
+    table td:nth-child(2) {
+      text-align: right; }
   table td:nth-child(1) {
     padding-left: .5em; }
   table td:nth-child(2) {
@@ -18,7 +19,3 @@ table {
 @media (max-width: 375px) {
   table {
     font-size: 26px; } }
-
-@media (max-width: 320px) {
-  table {
-    font-size: 23px; } }
