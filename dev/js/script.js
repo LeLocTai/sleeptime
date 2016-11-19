@@ -49,6 +49,8 @@ $(document).ready(function() {
         dail_stroke_color: '#fff5c7',
         onChange: changeTargetTime
     });
+    //Safari percentage height workaround
+    $('.inner').height($('.drum-wrapper').height());
 
     $('input[name=ap]', 'form.ampm').change(changeTargetTime);
     ws.change(changeTargetTime);
