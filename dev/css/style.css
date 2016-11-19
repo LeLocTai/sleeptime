@@ -52,7 +52,11 @@ form.ampm {
 .social-btn {
   display: flex;
   justify-content: center;
-  opacity: .75; }
+  opacity: .75;
+  animation-name: socialFadein;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-duration: 5s; }
   .social-btn * {
     display: inline-block !important;
     margin: 0 4px !important; }
@@ -62,3 +66,11 @@ form.ampm {
 .fb-share-button > span {
   display: inline-block !important;
   vertical-align: top !important; }
+
+@keyframes socialFadein {
+  0% {
+    opacity: 0; }
+  85% {
+    opacity: 0; }
+  100% {
+    opacity: .75; } }
