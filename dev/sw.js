@@ -1,4 +1,4 @@
- var cacheName = 'pwasleeptime-v0.1';
+ var cacheName = 'pwasleeptime-v1.0';
  var urlsToCache = [
      '',
      'index.html',
