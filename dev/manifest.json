@@ -1,0 +1,18 @@
+{
+    "short_name": "Sleep Time",
+    "name": "Sleep Time",
+    "icons": [{
+        "src": "\/image\/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image\/png"
+    }, {
+        "src": "\/image\/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image\/png"
+    }],
+    "background_color": "#2e0805",
+    "theme_color": "#2e0805",
+    "display": "standalone",
+    "orientation": "portrait",
+    "start_url": "index.html"
+}
