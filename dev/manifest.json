@@ -1,6 +1,6 @@
 {
     "short_name": "Sleep Time",
-    "name": "PWA Sleep Time",
+    "name": "Sleep Time Calculator",
     "icons": [{
         "src": "image\/android-chrome-192x192.png",
         "sizes": "192x192",
