@@ -1,9 +1,9 @@
  var cacheName = 'pwasleeptime';
  var urlsToCache = [
-     '/',
-     '/index.html',
-     '/styles.min.css',
-     '/scripts.min.js'
+     '',
+     'index.html',
+     'styles.min.css',
+     'scripts.min.js'
  ];
 
  self.addEventListener('install', function(event) {
