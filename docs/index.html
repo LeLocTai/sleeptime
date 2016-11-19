@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta charset="UTF-8">
     <title>PWA Sleeptime</title>
+    <meta name="description" content="Calculate sleep time base on REM cyle. Work offline">
+    <meta property="og:image" content="image/Screenshot.jpg">
     <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="image/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="image/favicon-16x16.png" sizes="16x16">
@@ -17,10 +19,12 @@
     <link rel="stylesheet" href="styles.min.css">
 
     <script defer src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="scripts.min.js" defer></script>
 </head>
 
 <body>
+    <div id="fb-root"></div>
     <select id="ws">
         <option selected>I need to wake up at</option>
         <option>I need to go to sleep at</option>
@@ -63,6 +67,12 @@
         </form>
     </div>
     <table id="result"></table>
+    <a class="github-button" href="https://github.com/leloctai/sleeptime/fork" data-style="mega" aria-label="Fork leloctai/sleeptime on GitHub">Fork</a>
+    <div class="fb-share-button" data-href="https://leloctai.github.io/sleeptime/" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fleloctai.github.io%2Fsleeptime%2F&amp;src=sdkpreparse">Share</a></div>
+    <!-- 
+    <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Calculate sleep time base on REM cyle. Work offline" data-size="large">Tweet</a> -->
+    <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Calculate sleep time base on REM cyle. Work offline" data-show-count="false">Tweet</a>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </body>
 

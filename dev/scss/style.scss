@@ -57,3 +57,21 @@ form.ampm {
         }
     }
 }
+
+.social-btn {
+    display: flex;
+    justify-content: center;
+    opacity: .75;
+    * {
+        display: inline-block !important;
+        margin: 0 4px !important;
+    }
+    :nth-child(2) {
+        margin-left: -4px !important;
+    }
+}
+
+.fb-share-button>span {
+    display: inline-block !important;
+    vertical-align: top !important;
+}

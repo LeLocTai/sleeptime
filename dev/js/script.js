@@ -16,7 +16,7 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-window.onload = function() {
+$(document).ready(function() {
     hourSelect = $('#hour');
     minuteSelect = $('#minute');
     result = $('#result');
@@ -54,7 +54,7 @@ window.onload = function() {
     ws.change(changeTargetTime);
 
     changeTargetTime();
-};
+});
 
 function changeTargetTime() {
     config = {

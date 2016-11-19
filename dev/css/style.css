@@ -48,3 +48,17 @@ form.ampm {
     display: none; }
     form.ampm input:checked + label {
       opacity: 1; }
+
+.social-btn {
+  display: flex;
+  justify-content: center;
+  opacity: .75; }
+  .social-btn * {
+    display: inline-block !important;
+    margin: 0 4px !important; }
+  .social-btn :nth-child(2) {
+    margin-left: -4px !important; }
+
+.fb-share-button > span {
+  display: inline-block !important;
+  vertical-align: top !important; }
