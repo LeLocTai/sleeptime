@@ -76,7 +76,7 @@ function changeTargetTime() {
     tr3 = $('<tr>');
     tr4 = $('<tr>');
     if (ws.val() == "I need to wake up at") {
-        th1 = $('<th>').html('Go to bed at');
+        th1 = $('<th>').html('Fall asleep at');
         th2 = $('<th>').html('to sleep for');
 
         tr1.append(th1, th2);
