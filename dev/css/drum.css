@@ -21,7 +21,7 @@ div.drum-wrapper {
     width: 100%;
     left: 0px;
     height: 2.4em;
-    background: linear-gradient(rgba(46, 8, 5, 0.9), rgba(46, 8, 5, 0)); }
+    background: linear-gradient(rgba(6, 6, 6, 0.9), rgba(6, 6, 6, 0)); }
     div.drum-wrapper .dial div {
       display: none; }
     div.drum-wrapper .dial svg {
@@ -34,7 +34,7 @@ div.drum-wrapper {
       top: 2px; }
   div.drum-wrapper .down {
     bottom: 0px;
-    background: linear-gradient(rgba(46, 8, 5, 0), rgba(46, 8, 5, 0.9)); }
+    background: linear-gradient(rgba(6, 6, 6, 0), rgba(6, 6, 6, 0.9)); }
     div.drum-wrapper .down svg {
       bottom: 2px; }
   div.drum-wrapper div.container,

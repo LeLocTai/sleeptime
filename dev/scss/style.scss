@@ -32,6 +32,12 @@ body {
     align-items: stretch;
     height: 6.5em;
     width: 100%;
+    select {
+        background: $background;
+        color: $accent;
+        border: none;
+        font-size: 48px;
+    }
 }
 
 span.middle {
@@ -61,7 +67,8 @@ form.ampm {
 .social-btn {
     display: flex;
     justify-content: center;
-    opacity: .75;
+    filter: sepia(.6);
+    opacity: .65;
     animation-name: socialFadein;
     animation-iteration-count: 1;
     animation-timing-function: ease;

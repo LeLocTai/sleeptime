@@ -2,8 +2,8 @@ body {
   font-family: 'Roboto', sans-serif;
   user-select: none;
   font-size: 28px;
-  color: rgba(255, 245, 200, 0.87);
-  background-color: #2e0805; }
+  color: #cc3d33;
+  background-color: #060606; }
 
 #ws {
   width: 100%;
@@ -18,9 +18,9 @@ body {
   padding-left: 8px;
   height: 2em;
   border-radius: 4px;
-  border-color: rgba(255, 245, 200, 0.87);
-  background-color: #2e0805;
-  color: rgba(255, 245, 200, 0.87); }
+  border-color: #cc3d33;
+  background-color: #060606;
+  color: #cc3d33; }
 
 .time-picker {
   display: flex;
@@ -29,6 +29,11 @@ body {
   align-items: stretch;
   height: 6.5em;
   width: 100%; }
+  .time-picker select {
+    background: #060606;
+    color: #cc3d33;
+    border: none;
+    font-size: 48px; }
 
 span.middle {
   display: inline-block;
@@ -52,7 +57,8 @@ form.ampm {
 .social-btn {
   display: flex;
   justify-content: center;
-  opacity: .75;
+  filter: sepia(0.6);
+  opacity: .65;
   animation-name: socialFadein;
   animation-iteration-count: 1;
   animation-timing-function: ease;
